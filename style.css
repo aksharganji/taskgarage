@@ -23,6 +23,7 @@ html[data-theme="dark"] {
 }
 
 body {
+  background: var(--bg);
   min-height: 100vh;
   margin: 0;
   padding: 38px;
@@ -499,6 +500,7 @@ input[type="checkbox"] {
 .fade-in {
   animation: fadeIn 380ms var(--transition) both;
 }
+
 
 @keyframes fadeIn {
   from {
