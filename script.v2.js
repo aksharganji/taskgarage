@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       return JSON.parse(json);
     } catch (e) {
-      console.error("Error parsing localStorage data:", e);
+      console.error("Failed to parse data from localStorage:", e);
       return fallback;
     }
   }
@@ -297,7 +297,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const totalProgress = tasks.reduce((acc, t) => {
-          // If task is completed, count its progress as 100
           if (t.completed) {
             return acc + 100;
           }
@@ -369,7 +368,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const t = tasks.find(x => x.id === id);
       if (!t) throw new Error("Task not found.");
       t.completed = !t.completed;
-      // Set progress to 100 when completed, or back to 0 when uncompleted
       if (t.completed) {
         t.progress = 100;
       } else {
